@@ -1,8 +1,14 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Nodes/Steelyard.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Images/Tips.png" type="Texture" id=2]
 [ext_resource path="res://Sounds/bgm.ogg" type="AudioStream" id=3]
+[ext_resource path="res://Images/start.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/StartButton.gd" type="Script" id=5]
+
+[sub_resource type="StyleBoxFlat" id=1]
+
+[sub_resource type="StyleBoxFlat" id=2]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2( -45, 0 )
@@ -22,3 +28,25 @@ texture = ExtResource( 2 )
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
 autoplay = true
+
+[node name="Button" type="Button" parent="."]
+pause_mode = 2
+self_modulate = Color( 0.188235, 0.188235, 0.188235, 1 )
+margin_left = -126.0
+margin_top = -63.0
+margin_right = 126.0
+margin_bottom = 84.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/normal = SubResource( 2 )
+shortcut_in_tooltip = false
+action_mode = 0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="start" type="Sprite" parent="Button"]
+position = Vector2( 127.063, 42.2563 )
+texture = ExtResource( 4 )
+
+[connection signal="pressed" from="Button" to="Button" method="_on_Button_pressed"]

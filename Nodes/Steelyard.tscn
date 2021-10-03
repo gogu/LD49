@@ -12,27 +12,27 @@
 [ext_resource path="res://Nodes/HandleRigid.gd" type="Script" id=10]
 [ext_resource path="res://Sounds/randomSFX.ogg" type="AudioStream" id=11]
 
-[sub_resource type="CircleShape2D" id=7]
-
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="CircleShape2D" id=1]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 308.131, 8.7567 )
 
 [sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 308.131, 8.7567 )
+
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 68.846, 14.1106 )
 
-[sub_resource type="CircleShape2D" id=8]
+[sub_resource type="CircleShape2D" id=5]
 
 [sub_resource type="RectangleShape2D" id=6]
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 18.7165, 16.8775 )
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 10, 25.0314 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 37.005, 37.1727 )
 
 [node name="Node" type="Node"]
@@ -42,7 +42,7 @@ position = Vector2( 129.142, -7.55951 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HandleStatic2"]
 position = Vector2( 44.1022, -14.5184 )
-shape = SubResource( 7 )
+shape = SubResource( 1 )
 
 [node name="HandleJoint" type="PinJoint2D" parent="."]
 position = Vector2( 129.445, -6.68175 )
@@ -61,7 +61,7 @@ texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HandleJoint/HandleStatic"]
 position = Vector2( -0.445465, 0.299599 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="HandleRigid" type="RigidBody2D" parent="."]
 mass = 61.4194
@@ -75,7 +75,7 @@ texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HandleRigid"]
 position = Vector2( 0, 0.222977 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="TrayJoint" type="PinJoint2D" parent="HandleRigid"]
 position = Vector2( 296, 8 )
@@ -94,19 +94,19 @@ texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HandleRigid/TrayJoint/TrayRigid"]
 position = Vector2( -1.76776, 60.8112 )
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="HandleRigid/TrayJoint/TrayRigid"]
 position = Vector2( -58.6529, -10.1021 )
-shape = SubResource( 8 )
+shape = SubResource( 5 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="HandleRigid/TrayJoint/TrayRigid"]
 position = Vector2( 52.4708, -7.85724 )
-shape = SubResource( 8 )
+shape = SubResource( 5 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="HandleRigid/TrayJoint/TrayRigid"]
 position = Vector2( -1.8573, -75.0517 )
-shape = SubResource( 8 )
+shape = SubResource( 5 )
 
 [node name="WeightJoint" type="PinJoint2D" parent="HandleRigid"]
 position = Vector2( -292.951, -11.0809 )
@@ -152,11 +152,11 @@ texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HandleRigid/WeightJoint/WeightRigid"]
 position = Vector2( -1.98425, 4.36536 )
-shape = SubResource( 4 )
+shape = SubResource( 7 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="HandleRigid"]
 position = Vector2( -315.34, 0.500305 )
-shape = SubResource( 9 )
+shape = SubResource( 8 )
 
 [node name="StoneRigid" type="RigidBody2D" parent="."]
 position = Vector2( 293.02, 120.974 )
@@ -170,7 +170,7 @@ scale = Vector2( 4, 4 )
 texture = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StoneRigid"]
-shape = SubResource( 5 )
+shape = SubResource( 9 )
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="StoneRigid"]
 emitting = false
